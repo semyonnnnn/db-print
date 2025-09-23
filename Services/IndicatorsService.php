@@ -72,10 +72,15 @@ class IndicatorsService
 
         foreach ($parent_names as &$item) {
             // dd('im here');
-            $the_thing = $this->db->select('s_pok_v', ['kodpokn', 'kodpokv'])->where('kodpok', $item['kodpok']);
-            // dd($the_thing);
-            $query = "SELECT [kodpokn], [kodpokv] FROM [munst1165].[dbo].[s_pok_v] WHERE kodpokv = {$item['kodpok']} and kodpokn in ($tables_string)";
-            $children = $this->query_runner($query);
+
+            dd($this->db->select('s_pok_v', ['kodpokn', 'kodpokv'])->where('kodpokv', $item['kodpok'], 'AND')->where_in('kodpokn', $this->tables));
+
+
+            //TODO: since values gets overriden in consecutive where/in calls i need a way to handle it
+            $children = $this->db->select('s_pok_v', ['kodpokn', 'kodpokv'])->where('kodpokv', $item['kodpok'], 'AND')->where_in('kodpokn', $this->tables)->get();
+
+            // $query = "SELECT [kodpokn], [kodpokv] FROM [munst1165].[dbo].[s_pok_v] WHERE kodpokv = {$item['kodpok']} and kodpokn in ($tables_string)";
+            // $children = $this->query_runner($query);
 
 
 
