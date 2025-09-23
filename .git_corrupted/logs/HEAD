@@ -1,0 +1,24 @@
+0000000000000000000000000000000000000000 abf54fe5468621e23b4ad2ab9377e5a6334854d3 Семён Максимович Гусев <145036030+Kanoe99@users.noreply.github.com> 1755764383 +0500	commit (initial): Initial commit
+abf54fe5468621e23b4ad2ab9377e5a6334854d3 3a12021858f95d25b3e247fca203b33d79030e65 Семён Максимович Гусев <145036030+Kanoe99@users.noreply.github.com> 1755860429 +0500	commit: DOCKER: done ◝(˶˃ ᵕ ˂˶)◜
+3a12021858f95d25b3e247fca203b33d79030e65 fd9d18d67ac520f1b75c75654b9a5f8a1a57df71 Семён Максимович Гусев <145036030+Kanoe99@users.noreply.github.com> 1756123182 +0500	commit: db: figuring out how it works
+fd9d18d67ac520f1b75c75654b9a5f8a1a57df71 a78cb777ba869984b6fb1b0a4731d0818b3b89a9 Семён Максимович Гусев <145036030+Kanoe99@users.noreply.github.com> 1756182683 +0500	commit: fix: env comment was the problem
+a78cb777ba869984b6fb1b0a4731d0818b3b89a9 4fec15f78429075bd0b249f35b03cbcecef54547 Семён Максимович Гусев <145036030+Kanoe99@users.noreply.github.com> 1756183214 +0500	commit: refactor: db and db debug separated
+4fec15f78429075bd0b249f35b03cbcecef54547 86c00c049138e0b0c59fd27bddf5cafdb6d8c831 Семён Максимович Гусев <145036030+Kanoe99@users.noreply.github.com> 1756203588 +0500	commit: db: deduction begins
+86c00c049138e0b0c59fd27bddf5cafdb6d8c831 ccedf90ec72ed76cd698ecc99edf01f4c5ae929b semyonnnnn <kanoe.s99@gmail.com> 1756203722 +0500	commit: test
+ccedf90ec72ed76cd698ecc99edf01f4c5ae929b 86c00c049138e0b0c59fd27bddf5cafdb6d8c831 semyonnnnn <kanoe.s99@gmail.com> 1756265737 +0500	reset: moving to 86c00c0
+86c00c049138e0b0c59fd27bddf5cafdb6d8c831 736fab9611074cdc5b7b7b9d4d0fccf7ccb054b1 semyonnnnn <kanoe.s99@gmail.com> 1756295762 +0500	commit: db: deduction continues
+736fab9611074cdc5b7b7b9d4d0fccf7ccb054b1 02cca2a13ce18948b37d93b19545943795688f0d semyonnnnn <kanoe.s99@gmail.com> 1756465068 +0500	commit: menu: building begins
+02cca2a13ce18948b37d93b19545943795688f0d 8863916277e9ebb34e1abef5fbcea2497e5f340e semyonnnnn <kanoe.s99@gmail.com> 1756727843 +0500	commit: struct: menu build in progress
+8863916277e9ebb34e1abef5fbcea2497e5f340e 11325ed3cb68b73c553b2696070f133d1ff1d67f semyonnnnn <kanoe.s99@gmail.com> 1756814216 +0500	commit: struct: building
+11325ed3cb68b73c553b2696070f133d1ff1d67f 52caa3a55cd266f3034f7d1c5212f103e074fad5 semyonnnnn <kanoe.s99@gmail.com> 1757070016 +0500	commit: logic: found
+52caa3a55cd266f3034f7d1c5212f103e074fad5 9a43e51e6531c023e1058d76e44db197570f83b7 semyonnnnn <kanoe.s99@gmail.com> 1757332742 +0500	commit: struct: get ready for ajax
+9a43e51e6531c023e1058d76e44db197570f83b7 5e92be2ae94095f773a157fdf860446bf380c551 semyonnnnn <kanoe.s99@gmail.com> 1757400912 +0500	commit: php: only, ajax after prototyping this
+5e92be2ae94095f773a157fdf860446bf380c551 c2b863edfbfa066767d44f4bced2ac7573415f70 semyonnnnn <kanoe.s99@gmail.com> 1757419240 +0500	commit: db: almost done indicators
+c2b863edfbfa066767d44f4bced2ac7573415f70 bacc386edcb8264259dcd2798d72b6f8f8e6aa49 semyonnnnn <kanoe.s99@gmail.com> 1757505477 +0500	commit: menu: done
+bacc386edcb8264259dcd2798d72b6f8f8e6aa49 5f37afdb4e1652a20660ec87556ac14a0bc0ef67 semyonnnnn <kanoe.s99@gmail.com> 1757591710 +0500	commit: ind menu: done
+5f37afdb4e1652a20660ec87556ac14a0bc0ef67 5f37afdb4e1652a20660ec87556ac14a0bc0ef67 semyonnnnn <kanoe.s99@gmail.com> 1757916851 +0500	reset: moving to 5f37afd
+5f37afdb4e1652a20660ec87556ac14a0bc0ef67 882b89982e8dba7de6ddba1b14e3c214d246fd3f semyonnnnn <kanoe.s99@gmail.com> 1757937365 +0500	commit: data: done
+882b89982e8dba7de6ddba1b14e3c214d246fd3f 6fdd81f155491a5a18b13cb9cfd49c5f602258b5 semyonnnnn <kanoe.s99@gmail.com> 1758010979 +0500	commit: composer: autoload
+6fdd81f155491a5a18b13cb9cfd49c5f602258b5 cc9de38a2f84b06ad577b8facad270cf38614b16 semyonnnnn <kanoe.s99@gmail.com> 1758023927 +0500	commit: pdf: begining
+cc9de38a2f84b06ad577b8facad270cf38614b16 3c39aeb3763e7fd7aeaeffcaf992cd9ea4d3d6d0 semyonnnnn <kanoe.s99@gmail.com> 1758110306 +0500	commit: fix: small fixes
+3c39aeb3763e7fd7aeaeffcaf992cd9ea4d3d6d0 07537d4d80d27162ed86cb7f98929aa8613e82c4 semyonnnnn <kanoe.s99@gmail.com> 1758196834 +0500	commit: db: refactor in process

@@ -1,0 +1,44 @@
+.menu-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: white;
+  width: 25rem;
+  height: calc(100vh - 5rem);
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+.outer {
+  /* border-bottom: 1px solid white; */
+  background-color: rgb(96, 33, 255);
+  padding: 0.5rem 1rem;
+}
+.inner {
+  padding: 0.2rem 0.5rem;
+  background-color: rgb(183, 154, 255);
+  border-bottom: 1px solid rgb(96, 33, 255);
+}
+.inner_menu {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.menu-main::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+/* Scrollbar track */
+.menu-main::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+/* Scrollbar thumb (the draggable part) */
+.menu-main::-webkit-scrollbar-thumb {
+  background: rgb(96, 33, 255);
+}
+
+/* Hover state */
+.menu-main::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
