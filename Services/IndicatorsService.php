@@ -68,21 +68,8 @@ class IndicatorsService
         }
         $parent_names = $this->db->select('s_pok', ['namepok', 'kodpok', 'kodei', 'namepole'])->where_in('kodpok', $parent_codes)->get();
 
-        $tables_string = implode(",", $this->tables);
-
         foreach ($parent_names as &$item) {
-            // dd('im here');
-
-            dd($this->db->select('s_pok_v', ['kodpokn', 'kodpokv'])->where('kodpokv', $item['kodpok'], 'AND')->where_in('kodpokn', $this->tables));
-
-
-            //TODO: since values gets overriden in consecutive where/in calls i need a way to handle it
             $children = $this->db->select('s_pok_v', ['kodpokn', 'kodpokv'])->where('kodpokv', $item['kodpok'], 'AND')->where_in('kodpokn', $this->tables)->get();
-
-            // $query = "SELECT [kodpokn], [kodpokv] FROM [munst1165].[dbo].[s_pok_v] WHERE kodpokv = {$item['kodpok']} and kodpokn in ($tables_string)";
-            // $children = $this->query_runner($query);
-
-
 
             $item['children'] = $children;
             foreach ($item['children'] as &$child) {
@@ -119,8 +106,6 @@ class IndicatorsService
             $sql_parts_zns[] = "SELECT '$zn' as zn, $zn as value from $table where oktmo = $this->oktmo and god = $this->year";
 
         }
-
-        // dd($this->db->fetch_all_key_pairs_unique('kodei', 'nameei', $kodeis, 's_ei', 'kodei'));
 
         $kodeis = $this->db->fetch_unique_kp('kodei', 'nameei', $kodeis, 's_ei', 'kodei')->get();
 

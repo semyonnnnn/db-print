@@ -16,7 +16,7 @@ class Database
     //eloquent emulation
 
     private string|null $sql = '';
-    private array|null $array_of_values = null;
+    private ?array $array_of_values = null;
     private string|null $PDO_MODE;
     private string|null $FETCH_METHOD = null;
     private array $PDO_MODES_VALUES = [
@@ -53,7 +53,8 @@ class Database
             $this->where_in,
             $this->where,
             $this->PDO_MODE,
-            $this->FETCH_METHOD
+            $this->FETCH_METHOD,
+            $this->array_of_values
         );
     }
 
@@ -112,6 +113,9 @@ class Database
         if (!preg_match('/\bselect\b/i', $this->sql)) {
             throw new ErrorException("OH NO SELECT MISSING");
         }
+        if (!$value) {
+            throw new ErrorException("NO VALUE");
+        }
         $where_exists = preg_match('/\bwhere\b/i', $this->sql);
 
         $sql = '';
@@ -136,6 +140,9 @@ class Database
         if (!preg_match('/\bselect\b/i', $this->sql)) {
             throw new ErrorException("OH NO SELECT MISSING");
         }
+        if (!$values) {
+            throw new ErrorException("NO VALUES");
+        }
 
         $where_exists = preg_match('/\bwhere\b/i', $this->sql);
 
@@ -150,14 +157,33 @@ class Database
         } else {
             $sql = "WHERE $column in ($placeholders)" . ($connector !== null ? " $connector" : '');
         }
+        // dd('im here');
         $this->sql = $this->sql . " " . $sql;
 
-        $this->array_of_values = $values;
+
+
+        $this->array_of_values = isset($this->array_of_values) ? array_values(array_merge($this->array_of_values, $values)) : $values;
+        $this->sql = $this->aov_setter($this->sql);
 
         $this->FETCH_METHOD = $this->FETCH_METHODS[$fetch_method];
         $this->PDO_MODE = "FETCH_ASSOC";
 
         return $this;
+    }
+
+    private function aov_setter($sql): string
+    {
+        $pattern = "/:\S+/";
+
+        $arr = explode(' ', $sql);
+        foreach ($arr as $key => &$word) {
+            if (preg_match($pattern, $word)) {
+                $word = "?";
+            }
+        }
+
+        $sql = implode(" ", $arr);
+        return $sql;
     }
 
     public function fetch_kp(string $key, string $value, array $array_of_data, $table, $param, $fetch_method = 'fetchAll'): static
@@ -194,9 +220,15 @@ class Database
 
     public function get()
     {
+
+        //TODO: check if sql has where and where in if so
+        //turn placeholders like :pl into ?
+        //merge arrays
+        //execute normally 
+
         $stmt = $this->pdo->prepare($this->sql);
 
-        $this->array_of_values ? $stmt->execute($this->array_of_values) : $stmt->execute();
+        isset($this->array_of_values) && $this->array_of_values !== null ? $stmt->execute($this->array_of_values) : $stmt->execute();
         $CURRENT_FETCH_METHOD = $this->FETCH_METHOD ?? 'fetchAll';
         $CURRENT_PDO_MODE = $this->PDO_MODE ?? 'FETCH_ASSOC';
 
